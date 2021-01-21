@@ -1,0 +1,62 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 325
+  Width = 654
+  object conexao: TFDConnection
+    Params.Strings = (
+      'Database=agenda_delphi'
+      'User_Name=root'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 120
+    Top = 65
+  end
+  object TBContatos: TFDTable
+    Active = True
+    IndexFieldNames = 'id_agenda'
+    Connection = conexao
+    UpdateOptions.UpdateTableName = 'agenda_delphi.contatos'
+    TableName = 'agenda_delphi.contatos'
+    Left = 216
+    Top = 72
+    object TBContatosid_agenda: TFDAutoIncField
+      FieldName = 'id_agenda'
+      Origin = 'id_agenda'
+      ReadOnly = True
+    end
+    object TBContatosnome: TStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 50
+    end
+    object TBContatoscelular: TStringField
+      FieldName = 'celular'
+      Origin = 'celular'
+      Required = True
+      Size = 16
+    end
+    object TBContatosbloqueado: TBooleanField
+      FieldName = 'bloqueado'
+      Origin = 'bloqueado'
+      Required = True
+    end
+    object TBContatosdata: TDateTimeField
+      FieldName = 'data'
+      Origin = 'data'
+      Required = True
+    end
+    object TBContatosobservacao: TMemoField
+      FieldName = 'observacao'
+      Origin = 'observacao'
+      Required = True
+      BlobType = ftMemo
+    end
+  end
+  object DSContatos: TDataSource
+    DataSet = TBContatos
+    Left = 312
+    Top = 80
+  end
+end

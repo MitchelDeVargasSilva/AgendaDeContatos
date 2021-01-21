@@ -1,0 +1,16 @@
+program Agenda;
+
+uses
+  Vcl.Forms,
+  UAgenda in 'UAgenda.pas' {Form9},
+  UnitDM in 'UnitDM.pas' {DataModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm9, Form9);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.

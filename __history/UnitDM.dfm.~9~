@@ -1,0 +1,27 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 325
+  Width = 654
+  object conexao: TFDConnection
+    Params.Strings = (
+      'Database=agenda_delphi'
+      'User_Name=root'
+      'DriverID=MySQL')
+    LoginPrompt = False
+    Left = 120
+    Top = 65
+  end
+  object TBContatos: TFDTable
+    IndexFieldNames = 'id_agenda'
+    Connection = conexao
+    UpdateOptions.UpdateTableName = 'agenda_delphi.contatos'
+    TableName = 'agenda_delphi.contatos'
+    Left = 216
+    Top = 72
+  end
+  object DSContatos: TDataSource
+    DataSet = TBContatos
+    Left = 312
+    Top = 80
+  end
+end

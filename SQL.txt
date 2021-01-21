@@ -1,0 +1,12 @@
+create database agenda_delphi;
+
+
+create table contatos(
+	id_agenda INTEGER AUTO_INCREMENT,
+	nome VARCHAR(50),
+	celular(16),
+	bloqueado TYNIINT(1),
+	data DATETIME,
+	observacao TEXT
+	CONSTRAINT PK_ID_AGENDA PRIMARY KEY(id_agenda)
+);
